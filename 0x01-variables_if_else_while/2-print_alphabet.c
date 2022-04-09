@@ -6,7 +6,7 @@
 */
 int main(void)
 {
-int n;
+int c;
 
 for (c = 0; c < 26;++c)
 putchar('a' + c);
