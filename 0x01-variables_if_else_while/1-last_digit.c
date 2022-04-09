@@ -4,7 +4,8 @@
 
 /**
 *main - Entry point
-*Prints a number and it's last digit and whether its
+*
+*Description: prints a number and it's last digit and whether its
 *last digit is 0, greater than 5, or less than 6 and not 0
 *Return: 0
 */
