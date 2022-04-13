@@ -3,18 +3,14 @@
 /**
 *main - Entry point
 *
-*_islower - single line and c contains value compared
+*_islower - checks if a character is lowercase
 *
-*Return: Always 0
+*Return: 1 if character is lowercase. otherwise 0
 */
 int _islower(int c)
 {
-if (c < 'a' && c < 'z')
-{
+if (c >= 'a' && c <= 'z')
 return (1);
-}
 else
-{
 return (0);
-}
 }

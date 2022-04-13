@@ -2,10 +2,10 @@
 #include <stdio.h>
 
 /**
-*int _abs - value absolute
-*int to print
+*_abs - computes the absolute value of an integer
+*@n: the integer to be computed
 *
-*Return: Always 0
+*Return: The absolute value of the integer
 */
 int _abs(int n)
 {

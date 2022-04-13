@@ -3,7 +3,7 @@
 /**
 *main - Entry point
 *
-*Printing alphabets x10
+*Print_alphabet_x10 - prints 10 times the alphabet in lowercase
 *
 *Return: Always 0
 */

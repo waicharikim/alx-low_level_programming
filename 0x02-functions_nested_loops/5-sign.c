@@ -1,10 +1,10 @@
-#iclude "main.h"
+#include "main.h"
 
 /**
-*print_sign - return 0 if letter not lowercase, 1 if  letter lowercase
-*then int n to print
+*print_sign - prints the sign of a number
+*@n: the number for which the sign will be printed
 *
-*Return: Always 0
+*Return: 1 if number is greater than 0, 0 if number is 0, -1 if number is less than 0
 */
 int print_sign(int n)
 {
