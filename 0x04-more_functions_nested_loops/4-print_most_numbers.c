@@ -1,17 +1,18 @@
 #include "main.h"
 /**
- *_isupper - checks for uppercase
- *@c: print int
- *Return: 1 or 0
+ *print_most_numbers - prints all numbers but 2 & 4
+ *
+ *Return: 0
  */
-int isupper(int c)
+void print_ost_numbers(void)
 {
-if (c >= 'A' && c <= 'Z')
+int i;
+i = 0;
+for (i = 0; i < 10; i++)
 {
-return (1);
+if (i == 2 || i == 4)
+i++;
+_putchar(i + '0');
 }
-else
-{
-return (0);
-}
+_putchar('\n');
 }
