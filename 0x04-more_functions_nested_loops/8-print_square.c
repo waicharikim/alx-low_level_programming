@@ -1,17 +1,26 @@
 #include "main.h"
 /**
- *_isupper - checks for uppercase
- *@c: print int
- *Return: 1 or 0
- */
-int isupper(int c)
+*Description: prins hashtags to make a square
+*@size: limit
+*
+*Return: void 
+*/
+void print_square(int size)
 {
-if (c >= 'A' && c <= 'Z')
+int a, b;
+if size > 0)
 {
-return (1);
+for (a = 0; a < size; a++)
+{
+for (b = 0; b < size; b++)
+{
+_putchar('#');
+}
+_putchar('\n');
+}
 }
 else
 {
-return (0);
+_putchar('\n');
 }
 }
