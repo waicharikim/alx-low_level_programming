@@ -1,17 +1,25 @@
 #include "main.h"
 /**
- *_isupper - checks for uppercase
- *@c: print int
- *Return: 1 or 0
+ *more_numbers - prints numbers 0-14 10 times
+ *Return: void
  */
-int isupper(int c)
+int more_numbers(void)
 {
-if (c >= 'A' && c <= 'Z')
+int a, b, c;
+for (c = 0; c < 10; c++)
 {
-return (1);
+for a = 0; a <= 1; a++)
+{
+for b = 0; b <= 9; b++)
+{
+if (!(a == 1 && b >= 5))
+{
+if (a)
+_putchar(i + '0');
+_putchar(b + '0');
 }
-else
-{
-return (0);
+}
+}
+_putchar('\n')'
 }
 }
