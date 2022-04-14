@@ -1,17 +1,27 @@
 #include "main.h"
+
 /**
- *_isupper - checks for uppercase
- *@c: print int
- *Return: 1 or 0
+ *Description: prints diagonals
+ *@n: limit
+ *Return: void
  */
-int isupper(int c)
+void print_diagonal(int n)
 {
-if (c >= 'A' && c <= 'Z')
+int x, y;
+if (n > 0)
 {
-return (1);
+for (x = 0; x < n; x++)
+{
+for (y = 0; y < x; y++)
+{
+_putchar(' ');
+}
+_putchar('\\');
+_putchar('\n');
+}
 }
 else
 {
-return (0);
+_putchar('\n');
 }
 }
