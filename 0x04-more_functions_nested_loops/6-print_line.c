@@ -1,17 +1,19 @@
 #include "main.h"
 /**
- *_isupper - checks for uppercase
- *@c: print int
- *Return: 1 or 0
+ *printline - prints underscore
+ *@n: limit
+ *
+ *Return: void
  */
-int isupper(int c)
+void print_line(int n)
 {
-if (c >= 'A' && c <= 'Z')
+int n;
+if (n > 0)
 {
-return (1);
+if (i = 0; i < n; i++)
+{
+_putchar('_');
 }
-else
-{
-return (0);
 }
+_putchar('\n');
 }
