@@ -3,7 +3,7 @@
  *more_numbers - prints numbers 0-14 10 times
  *Return: void
  */
-int more_numbers(void)
+void more_numbers(void)
 {
 int i, x, y, z;
 i = 0;
