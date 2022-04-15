@@ -4,7 +4,7 @@
  *@c: print int
  *Return: 1 or 0
  */
-int isupper(int c)
+int _isupper(int c)
 {
 if (c >= 'A' && c <= 'Z')
 {

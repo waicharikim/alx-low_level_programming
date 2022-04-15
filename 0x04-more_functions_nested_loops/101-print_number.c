@@ -1,17 +1,24 @@
 #include "main.h"
+#include <stdio.h>
 /**
- *_isupper - checks for uppercase
- *@c: print int
- *Return: 1 or 0
+ *print_number: prints int using putchar
+ *@n: gets integer, hello
+ *
+ *Return: void
  */
-int isupper(int c)
+void print_number(int n)
 {
-if (c >= 'A' && c <= 'Z')
+unsigned long i;
+if (n < 0)
 {
-return (1);
+_putchar('-');
+i = -n;
 }
 else
 {
-return (0);
+i = n;
 }
+if (i / 10 != 0)
+print_number(i / 10);
+_putchar((i % 10) + '0');
 }
