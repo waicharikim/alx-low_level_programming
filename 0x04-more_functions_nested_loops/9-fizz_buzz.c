@@ -1,17 +1,34 @@
-#include "main.h"
+#include <stdio.h>
 /**
- *_isupper - checks for uppercase
- *@c: print int
- *Return: 1 or 0
+ *Description: prints fizz if int divisible by 3 and buzz for 5
+ *
+ *Return:int
  */
-int isupper(int c)
+int main(void)
 {
-if (c >= 'A' && c <= 'Z')
+int i;
+for (i = 1; i <= 100; i++)
 {
-return (1);
+if (i % 3 == 0 && i % 5 != 0)
+{
+printf("Fizz");
+}
+else if (i % 3 != 0 && i % 5 == 0)
+{
+printf("Buzz");
+}
+else if (i % 3 == 0 && i % 5 == 0)
+{
+printf("FizzBuzz");
 }
 else
 {
-return (0);
+printf("%d", i);
 }
+if (i != 100)
+putchar(' ');
+else
+putchar('\n');
+}
+return (0);
 }
