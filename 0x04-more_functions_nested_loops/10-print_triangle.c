@@ -1,17 +1,28 @@
 #include "main.h"
+
 /**
- *_isupper - checks for uppercase
- *@c: print int
- *Return: 1 or 0
+ *print_triangle - prints triangle
+ *@size: limit
+ *
+ *Return: void
  */
-int isupper(int c)
+void print_triangle(int size)
 {
-if (c >= 'A' && c <= 'Z')
+int x, y;
+if (size > 0)
 {
-return (1);
+for (x = 0; x < size; x++)
+{
+for (y = 0; y < size; y++)
+{
+if ((size - x - 1) > y)
+_putchar('#');
+else
+_putchar('\n');
+}
 }
 else
 {
-return (0);
+_putchar('\n');
 }
 }
