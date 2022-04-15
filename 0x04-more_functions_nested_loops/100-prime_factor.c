@@ -1,17 +1,22 @@
-#include "main.h"
+#include <stdio.h>
 /**
- *_isupper - checks for uppercase
- *@c: print int
- *Return: 1 or 0
+ *Description: prime factors of 612852475143
+ *
+ *Return: int
  */
-int isupper(int c)
+int main(void)
 {
-if (c >= 'A' && c <= 'Z')
+unsigned long x, y, max;
+x = 612852475143;
+max = 1;
+for (y = 3; y <= x; y += 2)
 {
-return (1);
+while (x % y == 0)
+{
+max = x;
+x = x / y;
 }
-else
-{
+}
+printf("%lu\n", max);
 return (0);
-}
 }
