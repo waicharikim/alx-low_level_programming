@@ -5,21 +5,28 @@
  */
 int more_numbers(void)
 {
-int a, b, c;
-for (c = 0; c < 10; c++)
+int i, x, y, z;
+i = 0;
+z = 0;
+while (i < 10)
 {
-for a = 0; a <= 1; a++)
+while (z < 14)
 {
-for b = 0; b <= 9; b++)
+if (z < 10)
 {
-if (!(a == 1 && b >= 5))
-{
-if (a)
-_putchar(i + '0');
-_putchar(b + '0');
+y = z;
 }
+else
+{
+x = z / 10;
+y = z % 10;
+_putchar (x + '0');
 }
+_putchar(y + '0');
+z++;
 }
-_putchar('\n')'
+i++;
+z = 0;
+_putchar ('\n');
 }
 }

@@ -3,18 +3,18 @@
 *Description: prins hashtags to make a square
 *@size: limit
 *
-*Return: void 
+*Return: Always 0 
 */
 void print_square(int size)
 {
-int a, b;
+int i, k;
 if size > 0)
 {
-for (a = 0; a < size; a++)
+for (i = 0; i < size; i++)
 {
-for (b = 0; b < size; b++)
+for (k = 0; k < size; k++)
 {
-_putchar('#');
+_putchar(35);
 }
 _putchar('\n');
 }

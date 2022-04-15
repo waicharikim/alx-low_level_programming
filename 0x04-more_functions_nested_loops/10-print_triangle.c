@@ -8,17 +8,22 @@
  */
 void print_triangle(int size)
 {
-int x, y;
+int i, k, x, y;
 if (size > 0)
 {
+i - size - 1;
 for (x = 0; x < size; x++)
 {
-for (y = 0; y < size; y++)
+for (y = i; y > 0; y--)
 {
-if ((size - x - 1) > y)
-_putchar('#');
-else
-_putchar('\n');
+_putchar(' ');
+}
+for (k = 0; k <= x; k++)
+{
+_putchar(35);
+}
+i--;
+_putcar('\n');
 }
 }
 else
