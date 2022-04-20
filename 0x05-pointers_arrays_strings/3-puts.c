@@ -1,17 +1,19 @@
 #include "main.h"
-
 /**
- *swap_int - swap values of two integers a and b
- *@a: A pointer to an int to be updated
- *@b: B pointer to an int to be updated
+ *_puts - prints a string
+ *@str : A pointer to an int to be updated
+ *
  *Return: void
  */
 
-void swap_int(int *a, int *b)
-
+void _puts(char *str)
 {
-int f;
- f = *a;
- *a = *b;
- *b = f;
+char *c;
+int m;
+c = str;
+for (m = 0; c[m]; m++)
+{
+_putchar (c[m]);
+}
+_putchar('\n');
 }
