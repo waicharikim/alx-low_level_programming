@@ -1,25 +1,24 @@
 #include "main.h"
 /**
- *_strcat - concantenates two strings
+ *_strncpy - copies a string
  *@dest: pointer to acharacter that will be modified
  *@src: pointer to a character that will be modified
+ *@n: value
  *return: dest
  */
-char *_strcat(char *dest, char *src)
+char *_strncpy(char *dest, char *src, int n)
 {
-int i, j;
+int i;
 i = 0;
-while (dest[i] != '\0')
+while (i < n && src[i] != '\0')
 {
+dest[i] = src[i];
 i++;
 }
-j = 0;
-while (src[j] != '\0')
+while (i < n)
 {
-dest[i] = src[j];
-j++;
-i++;
-}
 dest[i] = '\0';
+i++;
+}
 return (dest);
 }
