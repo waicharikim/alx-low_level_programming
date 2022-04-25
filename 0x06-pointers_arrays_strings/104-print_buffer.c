@@ -8,7 +8,7 @@
  *@l: line of buffer to print
  *return: void
  */
-void print_line(char *c, int s, int1)
+void print_line(char *c, int s, int l)
 {
   int x, y;
   for (x = 0; x <= 9; x++)
