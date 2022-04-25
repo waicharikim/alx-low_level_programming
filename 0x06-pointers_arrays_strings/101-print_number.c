@@ -1,25 +1,20 @@
 #include "main.h"
 /**
- *_strcat - concantenates two strings
- *@dest: pointer to acharacter that will be modified
- *@src: pointer to a character that will be modified
- *return: dest
+ *print_number - prints an integer
+ *@n: integer
+  *return: void
  */
-char *_strcat(char *dest, char *src)
+void print_number(int n)
 {
-int i, j;
-i = 0;
-while (dest[i] != '\0')
-{
-i++;
-}
-j = 0;
-while (src[j] != '\0')
-{
-dest[i] = src[j];
-j++;
-i++;
-}
-dest[i] = '\0';
-return (dest);
-}
+unsigned int num;
+num = n;
+ if (n < 0)
+   {
+     _putchar(45);
+     num = -n;
+     if (num / 10)
+       {
+	 print_number(num / 10);
+       }
+     _putchar((num % 10) + '0');
+   }
