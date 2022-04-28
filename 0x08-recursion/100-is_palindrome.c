@@ -13,7 +13,13 @@ int _strlen_recursion(char *s)
   return (1 + _strlen_recursion(++s));
 }
 
-int pl(char *s, int l)
+/**
+ *p1 - palindrome
+ *@s: pointer to a string
+ *@l: position
+ *return: boolean
+ */
+int p1(char *s, int l)
 {
   if (l < 1)
     {

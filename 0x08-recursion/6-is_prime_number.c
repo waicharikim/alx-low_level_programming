@@ -22,6 +22,12 @@ int evaluate_num(int num, int iterator)
   return (0);
 }
 
+/**
+ *is_prime_number - evaluates if a number is prime
+ *@num: number
+ *return: 1 if prime otherwise 0
+ */
+
 int is_prime_number(int num)
 {
   int iterator;
