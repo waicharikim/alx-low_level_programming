@@ -10,30 +10,32 @@
  */
 int main(int argc, char *argv[])
 {
-  int number, sum, change, aux;
+  int position, total, change, aux;
   int coins[] = {25, 10, 5, 2, 1};
-  number = sum = change = aux = 0;
+  
+  position = total = change = aux = 0;
   if (argc != 2)
     {
-      printf("error\n");
+      printf("Error\n");
       return (1);
     }
-  sum = atoi(argv[1]);
-  if (sum <= 0)
+  total = atoi(argv[1]);
+  if (total <= 0)
     {
       printf("0\n");
       return (0);
+    }
 
-      while (coins[number] !='\0')
+      while (coins[position] !='\0')
 	{
-	  if (sum >= coins[number])
+	  if (total >= coins[position])
 	    {
-	      aux = (sum / coins[number]);
+	      aux = (total / coins[position]);
 	      change += aux;
-	      sum -= coins[number] * aux;
+	      total -= coins[position] * aux;
 	    }
-	  number++;
+	  position++;
 	}
       printf("%d\n", change);
       return (0);
-    }
+}
