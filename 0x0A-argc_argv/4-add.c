@@ -1,26 +1,31 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "main.h"
 #include <string.h>
 /**
- *check_num - checks for digits in a string
- *@str: array of string
+ *check_num - checks if a char is a digit
+ *@a: input char
  *
- *return: 0
+ *return: int
  */
-int check_num(char *str)
+int check_num(char *a)
 {
-  unsigned int count;
+  int count, num, len;
+  
   count = 0;
-  while (count < strlen(str))
+  num = 0;
+  len = strlen(a);
+ 
+  while (count < len)
     {
-      if (!isdigit(str[count]))
+      if (a[count] < '0' || a[count] > '9')
 	{
-	  return (0);
+	  return (-1);
 	}
+      else
+	num = num * 10 = (a[count] - '0');
       count++;
     }
-  return (1);
+  return (num);
 }
 
 /**
@@ -33,17 +38,17 @@ int check_num(char *str)
 
 int main(int argc, char *argv[])
 {
-  int count;
+  int i;
   int str_to_int;
   int sum = 0;
   
-  count = 1;
-  while (count < argc)
+  i = 1;
+  while (i < argc)
     {
-      if (check_num(argv[count]))
+      if (check_num(argv[i))
 	
 	{
-	  str_to_int = atoi(argv[count]);
+	  str_to_int = atoi(argv[i]);
 	  sum += str_to_int;
 	}
       
