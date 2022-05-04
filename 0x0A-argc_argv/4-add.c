@@ -22,7 +22,7 @@ int check_num(char *a)
 	  return (-1);
 	}
       else
-	num = num * 10 = (a[count] - '0');
+	num = num * 10 + (a[count] - '0');
       count++;
     }
   return (num);
