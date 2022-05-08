@@ -17,21 +17,10 @@ char *create_array(unsigned int size, char c)
     }
 
   /*Define values with malloc*/
-  array = (char *) malloc(size * sizeof(c));
-  if (buffer == 0)
-    {
-      return (NULL);
-    }
-  
-  else
-    {
-      position = 0;
-      while (position < size) /* while for array*/
-	{
-	  *(array + position) = c;
-	  position++;
-	}
-      return (array);
-    }
+  array = malloc(sizeof(char) * size);
+  if (array == NULL)
+          return (NULL);
+  for (position = 0; position < size; position++)
+    array[position] = c;
+  return (array);
 }
-				
