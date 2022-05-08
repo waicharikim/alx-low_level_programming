@@ -1,15 +1,15 @@
 #include "main.h"
 /**
- *argstostr - function that concantenates all the arguments of the program
- *@ac: count of args passed to the function
- *@av: array of arguments
- *
- *return: pointer to new string
- */
+*argstostr - function that concantenates all the arguments of the program
+*@ac: count of args passed to the function
+*@av: array of arguments
+*
+*return: pointer to new string
+*/
 char *argstostr(int ac, char **av)
 {
-  char *new_string = NULL;
-  int k = 0, i = ac, j, sum = 0, temp = 0;
+char *new_string = NULL;
+int k = 0, i = ac, j, sum = 0, temp = 0;
 
   if (ac == 0 || av == NULL)
     return (NULL);
@@ -26,7 +26,7 @@ char *argstostr(int ac, char **av)
 	    new_string[j + temp] = av[k][j];
 	  new_string[temp + j] = '\n';
 	  temp += (j + 1);
-	  K++;
+	  k++;
 	}
       new_string[temp] = '\0';
     }
@@ -38,13 +38,14 @@ char *argstostr(int ac, char **av)
 }
 
 /**
- *len - length of str
- *@str: string count
- *return: len
- */
+*len - length of string
+*@str: string count
+*
+*return: len
+*/
 int len(char *str)
 {
-  int len = 0;
+int len = 0;
   {
     while (str[len])
       len++;

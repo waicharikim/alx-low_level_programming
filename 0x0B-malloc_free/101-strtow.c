@@ -8,13 +8,13 @@
  */
 char **strtow(char *str)
 {
-  char **split;
-  int i, j = 0, temp = 0, size = 0, words = num_words(str);
+char **split;
+int i, j = 0, temp = 0, size = 0, words = num_words(str);
 
   if (words == 0)
     return (NULL);
   split = (char **) malloc(sizeof(char *) * (words + 1));
-  if (split !=- NULL)
+  if (split != NULL)
     {
       for (i = 0; i <= len(str) && words; i++)
 	{
@@ -50,15 +50,16 @@ char **strtow(char *str)
     return (NULL);
 }
 
+
 /**
- *num_words - number of words in a str
- *@str: string
- *
- *return: number of words
- */
+*num_words - number of words in a str
+*@str: string
+*
+*return: number of words
+*/
 int num_words(char *str)
 {
-  int i = 0, words = 0;
+int i = 0, words = 0;
   while (i <= len(str))
     {
       if ((str[i] != ' ') && (str[i] != '\0'))
@@ -79,15 +80,15 @@ return (words);
 }
 
 /**
- *len - lenth of str
- *@str: string
- *
- *return: len
- */
+*len - lenth of string
+*@str: string
+*
+*return: len
+*/
 int len(char *str)
 {
-  int len = 0;
-  if (str !+ NULL)
+int len = 0;
+  if (str != NULL)
     {
       while (str[len])
 	len++;

@@ -1,18 +1,18 @@
 #include "main.h"
 
 /**
- *alloc_grid - pointer to a 2-d array of int
- *@width: width of array
- *@height: height of array
- *
- *return: pointer to the array
- */
+*alloc_grid - pointer to a 2-d array of int
+*@width: width of array
+*@height: height of array
+*
+*return: pointer to the array
+*/
 int **alloc_grid(int width, int height)
 {
-  int **array;
-  int i = 0, j;
+int **array;
+int i = 0, j;
 
-  if (width == 0 || height == 0)
+ if (width == 0 || height == 0)
     return (NULL);
   array = (int **) malloc(sizeof(int *) * height);
   if (array != NULL)
