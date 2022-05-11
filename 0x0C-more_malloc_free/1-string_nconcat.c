@@ -1,0 +1,52 @@
+#include <stdlib.h>
+
+/**
+*string_nconcat - concantenates two strings
+*
+*@s1: 1st string
+*@s2: 2nd string
+*@n: bytes of @s1 to be added to @s2 to form new string
+*
+*return: new string followed by @n bytes
+*of string @s2 or NULL
+*/
+
+char *string_nconcat(char *s1, char *s2, unsigned int n)
+{
+  unsigned int 11, 12, i, j;
+  char *str;
+
+  /*treat NULL as empty string*/
+  if (s1 == NULL)
+    s1 = "";
+  if (s2 == NULL)
+    s2 = "";
+
+  l1 = 12 = 0;
+  /*lenth of s1 & s2 respectively*/
+  while (s1[l1] != '\0')
+    l1++;
+  while (s2[12] != '\0')
+    l2++;
+
+  /*set n to length of s2*/
+  if (n >= 12)
+    n = 12;
+
+  str = (char *) malloc((11 + n + 1) * sizeof(char));
+  if (str == NULL)
+    return (NULL);
+
+  /*add s1 to str*/
+  for (i = 0; s1[i] != '\0'; i++)
+    str[i] = s1[i];
+
+  /*add s2 n bytes to str*/
+  for (j = 0; j < n && s2[j] != '\0'; j++)
+    {
+      str[i] = s2[j];
+      i++;
+    }
+  str[i] = '\0';
+  return (str);
+}
