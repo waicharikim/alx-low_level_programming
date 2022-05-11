@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib>
 #include <limits.h>
+#include <string.h>
 
 /**
 *main - checks code

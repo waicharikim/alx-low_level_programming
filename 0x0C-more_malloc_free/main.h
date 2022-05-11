@@ -12,6 +12,7 @@ int *array_range(int min, int max);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 int _putchar(char c);
 
+
 /*functions for 101-mul.c */
 
 /**
@@ -20,7 +21,7 @@ int _putchar(char c);
 *
 *return: Error 98 and exit(98)
 */
-
+/**
 int error_exit(void)
 {
 char *err;
@@ -32,13 +33,13 @@ char *err;
  _putchar('\n');
  exit(98);
 }
-
+*/
 /**
 *check_number - checks if a string has numbers only
 *@str:string to check
 *return: 0 if true 1 if false
 */
-
+/**
 int check_number(char *str)
 {
   while (*str != '\0')
@@ -49,7 +50,7 @@ int check_number(char *str)
     }
   return (0);
 }
-
+*/
 /**
 *_length - get the length of strings
 *
@@ -57,7 +58,7 @@ int check_number(char *str)
 *
 *return: len
 */
-
+/**
 int _length(char *str)
 {
   int i = 0;
@@ -65,7 +66,7 @@ int _length(char *str)
     i++;
   return (i);
 }
-
+*/
 #endif /* MAIN_H */
 
  
