@@ -39,7 +39,7 @@ char *err;
 *return: 0 if true 1 if false
 */
 
-int check_number9char *str)
+int check_number(char *str)
 {
   while (*str != '\0')
     {
