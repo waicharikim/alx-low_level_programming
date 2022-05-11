@@ -4,7 +4,7 @@
 *
 *@b: amount of bytes
 *
-*return: pointer to new allocated memory
+*Return: pointer to new allocated memory
 *exit with 98 if malloc fails
 */
 
@@ -14,6 +14,8 @@ void *ptr;
 
  ptr = malloc(b);
  if (ptr == NULL)
-   exit(98);
+   {
+     exit(98);
+   }
  return (ptr);
 }

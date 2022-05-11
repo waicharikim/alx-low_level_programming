@@ -8,44 +8,32 @@
  *@new_size: size in bytes for new memory block
  *
  *Return: pointer to reallocated memory block
- *if new_size == old_size - ptr
- *if new_size == 0 and ptr is not NULL - NULL
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
-void *mem;
+{
 char *ptr_copy, *filler;
-unsigned int index;
+unsigned int i;
 
-if (new_size == old_size)
-  return (ptr);
-
-if (ptr == NULL)
+if (ptr != NULL)
+  ptr_copy = ptr;
+else
   {
-    mem = malloc(new_size);
-
-    if (mem == NULL)
-      return (NULL);
-
-    return (mem);
+    return (malloc(new_size));
   }
+    if (new_size == old_size)
+      return (ptr);
 if (new_size == 0 && ptr != NULL)
   {
     free(ptr);
-    return (NULL);
+    return (0);
   }
-ptr_copy = ptr;
-mem = malloc(sizeof(*ptr_copy) * new_size);
-
-if (mem == NULL)
+filler = malloc(new_size);
+if (filler == NULL)
+  return (0);
+for (i = 0; i < (old_size || i < new_size); i++)
   {
-    free(ptr);
-    return (NULL);
+    *(filler + i) = ptr_copy[i];
   }
-filler = mem;
-
-for (index = 0; index < old_size && index < new_size; index++)
-  filler[index] = *ptr_copy++;
-
 free(ptr);
-return (mem);
+return (filler);
 }
