@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
 *_calloc - allocates memory for an array of a certain
@@ -23,7 +22,7 @@ unsigned int index;
   if (mem == NULL)
     return (NULL);
 
-  for (index = 0; index < (size * nmemb); index++)
-    mem[index] = '\0';
+  for (index = 0; index < size * nmemb; index++)
+    mem[index] = 0;
   return (mem);
 }
