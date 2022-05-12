@@ -39,6 +39,7 @@ char *_copy(char *src)
  *@owner: owner of the dog
  *@Return: pointer to the new dog variable
  */
+dog_t *new_dog(char *name, float age, char *owner)
 {
 dog_t *snoopie;
 char *new_name, *new_owner;
