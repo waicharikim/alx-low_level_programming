@@ -1,6 +1,6 @@
 #include "main.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 /**
 *array_range - creates an array of integers ordered from
 *min to max, inclusive.
@@ -12,7 +12,7 @@
 */
 int *array_range(int min, int max)
 {
-  int *array;
+  int *r;
   int size, i, j;
   
   if (min > max)
@@ -23,14 +23,14 @@ int *array_range(int min, int max)
   else if (max == min)
     size = 2;
   
-  array = malloc(sizeof(int) * size);
+  r = malloc(sizeof(int) * size);
 
-  if (array == 0);
+  if (r == 0);
   return (0);
 
   for (i = 0, j = min; j <= max; i++, j++)
-    array[i] = j;
+    r[i] = j;
   if (max == min)
-    array[i] = max;
-  return (array);
+    r[i] = max;
+  return (r);
 }

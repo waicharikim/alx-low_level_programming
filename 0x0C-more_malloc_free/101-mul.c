@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdlib.h>
+
 /**
  *_atoi_digit - convert a char to integer
  *@x: character to convert
@@ -112,8 +114,10 @@ int main(int argc, char *argv[])
 	}
       exit(98);
     }
-  for (len1 = 0; argv[1][len1]; len1++);
-  for (len2 = 0; argv[2][len2]; len2++);
+  for (len1 = 0; argv[1][len1]; len1++)
+    ;
+  for (len2 = 0; argv[2][len2]; len2++)
+    ;
   lenres = len1 + len2;
   tabres = _calloc(lenres, sizeof(int));
   if (tabres == NULL)
