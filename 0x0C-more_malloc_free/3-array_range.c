@@ -24,7 +24,6 @@ int *array_range(int min, int max)
     size = 2;
   
   r = malloc(sizeof(int) * size);
-
   if (r == 0);
   return (0);
 
