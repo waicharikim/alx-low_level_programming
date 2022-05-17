@@ -6,7 +6,7 @@
  *@name: name to print
  *@f: pointer to the printing function
  */
-void print_nam_as_is(char *name)
+void print_name_as_is(char *name)
 {
   printf("Hello, my name is %s\n", name);
 }
