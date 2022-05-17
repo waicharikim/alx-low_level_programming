@@ -1,14 +1,38 @@
-#include "function_pointers.h"
-#include <stdlib.h>
+#include <stdio.h>
+#include"function_pointers.h"
+
 /**
  *print_name - prints a name
  *@name: name to print
  *@f: pointer to the printing function
  */
-void print_name(char *name, void (*f)(char *))
+void print_nam_as_is(char *name)
 {
-  if (name && f)
+  printf("Hello, my name is %s\n", name);
+}
+
+void print_name_uppercase(char *name)
+{
+  unsigned int i;
+  printf("Hello, my uppercase name is ");
+  i = 0;
+  while (name[i])
     {
-    f(name);
+      if (name[i] >= 'a' && name[i] <= 'z')
+	{
+	  putchar(name[i] + 'A' - 'a');
+	}
+      else
+	{putchar(name[i]);
+	}
+      i++;
+    }
 }
+int main(void)
+{
+  print_name("Danton", print_name_as_is);
+  print_name("Rick Harris", print_name_uppercase);
+printf("\n");
+ return(0);
 }
+
