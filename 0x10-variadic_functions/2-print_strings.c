@@ -23,7 +23,7 @@ for (i = 0; i < n; i++)
       printf("%s", s);
     else
       printf("%p", s);
-    if (separator != NULL && s < n - 1)
+    if (separator != NULL && i < n - 1)
 	printf("%s", separator);
   }
 printf("\n");
