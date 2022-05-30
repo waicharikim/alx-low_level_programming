@@ -4,7 +4,7 @@
 *@head: pointer to the first node in the list
 *Return: ponter to the first node
 */
-listint *reverse_listint(listint_t **head)
+listint_t *reverse_listint(listint_t **head)
 {
 listint_t *prev = NULL;
 listint_t *next = NULL;
