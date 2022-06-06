@@ -1,4 +1,3 @@
-#include "main.h"
 #include <elf.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -7,8 +6,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void close_fd(int fd);
-void copy_contents(int from_fd, int to_fd, char *dest_file);
 void check_elf(unsigned char *e_ident);
 void print_magic(unsigned char *e_ident);
 void print_class(unsigned char *e_ident);
@@ -21,27 +18,17 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident);
 void close_elf(int elf);
 
 /**
- * main - Copies the content of a file to another file
- * @argc: The number of arguments
- * @argv: The arguments
  * check_elf - Checks if a file is an ELF file.
  * @e_ident: A pointer to an array containing the ELF magic numbers.
  *
- * Return: 0 if successful, otherwise a number between 97 and
- * 100 (each number represents an error)
  * Description: If the file is not an ELF file - exit code 98.
  */
-int main(int argc, char *argv[])
 void check_elf(unsigned char *e_ident)
 {
-int from_fd, to_fd;
 int index;
 
-if (argc != 3)
 for (index = 0; index < 4; index++)
 {
-dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-exit(97);
 if (e_ident[index] != 127 &&
 e_ident[index] != 'E' &&
 e_ident[index] != 'L' &&
@@ -50,10 +37,8 @@ e_ident[index] != 'F')
 dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
 exit(98);
 }
-	}
 }
-to_fd = open(argv[2], O_WRONLY | O_TRUNC);
-if (to_fd < 0)
+}
 
 /**
  * print_magic - Prints the magic numbers of an ELF header.
@@ -63,16 +48,12 @@ if (to_fd < 0)
  */
 void print_magic(unsigned char *e_ident)
 {
-to_fd = open(argv[2], O_WRONLY | O_CREAT, 0664);
-if (to_fd < 0)
 int index;
 
 printf("  Magic:   ");
 
 for (index = 0; index < EI_NIDENT; index++)
 {
-dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-exit(99);
 printf("%02x", e_ident[index]);
 if (index == EI_NIDENT - 1)
 printf("\n");
@@ -80,8 +61,6 @@ else
 printf(" ");
 }
 }
-from_fd = open(argv[1], O_RDONLY);
-if (from_fd < 0)
 
 /**
  * print_class - Prints the class of an ELF header.
@@ -89,9 +68,6 @@ if (from_fd < 0)
  */
 void print_class(unsigned char *e_ident)
 {
-close_fd(to_fd);
-dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-exit(98);
 printf("  Class:                             ");
 
 switch (e_ident[EI_CLASS])
@@ -108,27 +84,18 @@ break;
 default:
 printf("<unknown: %x>\n", e_ident[EI_CLASS]);
 }
-copy_contents(from_fd, to_fd, argv[2]);
-close_fd(from_fd), close_fd(to_fd);
-return (0);
 }
 
 /**
- * close_fd - closes a file handle and exits program on failure
- * @fd: The file handle
  * print_data - Prints the data of an ELF header.
  * @e_ident: A pointer to an array containing the ELF class.
  */
-void close_fd(int fd)
 void print_data(unsigned char *e_ident)
 {
-if (close(fd) == -1)
 printf("  Data:                              ");
 
 switch (e_ident[EI_DATA])
 {
-dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd);
-exit(100);
 case ELFDATANONE:
 printf("none\n");
 break;
@@ -151,6 +118,7 @@ void print_version(unsigned char *e_ident)
 {
 printf("  Version:                           %d",
 e_ident[EI_VERSION]);
+
 switch (e_ident[EI_VERSION])
 {
 case EV_CURRENT:
@@ -208,23 +176,15 @@ printf("<unknown: %x>\n", e_ident[EI_OSABI]);
 }
 
 /**
- * copy_contents - Copies the contents from one file to another
- * @from_fd: The source file handle
- * @to_fd: The destination file handle
- * @dest_file: The destination file name
  * print_abi - Prints the ABI version of an ELF header.
  * @e_ident: A pointer to an array containing the ELF ABI version.
  */
-void copy_contents(int from_fd, int to_fd, char *dest_file)
 void print_abi(unsigned char *e_ident)
 {
-int i, c, buf_size = 1024;
-void *buf = malloc(sizeof(char) * buf_size);
 printf("  ABI Version:                       %d\n",
 e_ident[EI_ABIVERSION]);
 }
 
-if (buf != NULL)
 /**
  * print_type - Prints the type of an ELF header.
  * @e_type: The ELF type.
@@ -232,7 +192,6 @@ if (buf != NULL)
  */
 void print_type(unsigned int e_type, unsigned char *e_ident)
 {
-for (i = 0; ; i += buf_size)
 if (e_ident[EI_DATA] == ELFDATA2MSB)
 e_type >>= 8;
 
@@ -240,8 +199,6 @@ printf("  Type:                              ");
 
 switch (e_type)
 {
-c = read(from_fd, buf, buf_size);
-if (c == 0)
 case ET_NONE:
 printf("NONE (None)\n");
 break;
@@ -257,7 +214,6 @@ break;
 case ET_CORE:
 printf("CORE (Core file)\n");
 break;
-if (write(to_fd, buf, c) != c)
 default:
 printf("<unknown: %x>\n", e_type);
 }
@@ -274,8 +230,6 @@ printf("  Entry point address:               ");
 
 if (e_ident[EI_DATA] == ELFDATA2MSB)
 {
-dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest_file);
-exit(99);
 e_entry = ((e_entry << 8) & 0xFF00FF00) |
 ((e_entry >> 8) & 0xFF00FF);
 e_entry = (e_entry << 16) | (e_entry >> 16);
@@ -283,10 +237,10 @@ e_entry = (e_entry << 16) | (e_entry >> 16);
 
 if (e_ident[EI_CLASS] == ELFCLASS32)
 printf("%#x\n", (unsigned int)e_entry);
+
 else
 printf("%#lx\n", e_entry);
 }
-free(buf);
 
 /**
  * close_elf - Closes an ELF file.
