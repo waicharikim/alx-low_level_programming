@@ -15,7 +15,7 @@ if (file == -1)
 return (-1);
 if (text_content != NULL)
 {
-for (i = 0; text_content[i]; i);
+for (i = 0; text_content[i]; i++);
 if (fwrite == -1)
 return (-1);
 }
