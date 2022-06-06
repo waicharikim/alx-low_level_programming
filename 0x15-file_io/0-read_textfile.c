@@ -12,9 +12,9 @@ ssize_t file, fread, fwrite;
 char *totalSize;
 totalSize = malloc(sizeof(char) * letters);
 if (totalSize == NULL)
-return(0);
+return (0);
 if (filename == NULL)
-return(0);
+return (0);
 file = open(filename, O_RDONLY);
 if (file == -1)
 return (0);
