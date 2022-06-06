@@ -1,109 +1,49 @@
 #include "main.h"
 
-void close_fd(int fd);
-void copy_contents(int from_fd, int to_fd, char *dest_file);
-
 /**
- *main - copies contents of a file to another file
-*@argc: number of arguments
-*@argv: double pointer
-*Return: number of letters read and printed
-*/
+ * main - copies the content of a file to another file
+ * @argc: number of arguments passed
+ * @argv: double pointer
+ * Return: the actual number of letters it could read and print
+ */
 int main(int argc, char **argv)
 {
-int n1, n2, i;
-char adr[1024];
- * main - Copies the content of a file to another file
- * @argc: The number of arguments
- * @argv: The arguments
- *
- * Return: 0 if successful, otherwise a number between 97 and
- * 100 (each number represents an error)
- */
-int main(int argc, char *argv[])
-{
-int from_fd, to_fd;
-
+int f1, f2, n;
+char buf[1024];
 if (argc != 3)
 {
 dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 exit(97);
 }
-n1 = open(argv[1], O_RDONLY);
-if (n1 == -1)
+f1 = open(argv[1], O_RDONLY);
+if (f1 == -1)
 {
 dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 exit(98);
 }
-n2 = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
-while ((n = read(n1, adr, 1024)) > 0)
-to_fd = open(argv[2], O_WRONLY | O_TRUNC);
-if (to_fd < 0)
+f2 = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
+while ((n = read(f1, buf, 1024)) > 0)
 {
-if (write(n2, adr, i) != i || n2 == -1)
-to_fd = open(argv[2], O_WRONLY | O_CREAT, 0664);
-if (to_fd < 0)
+if (write(f2, buf, n) != n || f2 == -1)
 {
 dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 exit(99);
 }
 }
-if (i == -1);
-from_fd = open(argv[1], O_RDONLY);
-if (from_fd < 0)
+if (n == -1)
 {
-close_fd(to_fd);
 dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 exit(98);
 }
-if (close(n1) < 0)
-copy_contents(from_fd, to_fd, argv[2]);
-close_fd(from_fd), close_fd(to_fd);
-return (0);
-}
-
-/**
- * close_fd - closes a file handle and exits program on failure
- * @fd: The file handle
- */
-void close_fd(int fd)
+if (close(f1) < 0)
 {
-dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", n1);
-exit (100);
-if (close(fd) == -1)
-{
-dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd);
+dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f1);
 exit(100);
 }
-}
- if (close(n2) < 0)
-
-/**
- * copy_contents - Copies the contents from one file to another
- * @from_fd: The source file handle
- * @to_fd: The destination file handle
- * @dest_file: The destination file name
- */
-void copy_contents(int from_fd, int to_fd, char *dest_file)
+if (close(f2) < 0)
 {
-dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", n2);
+dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f2);
+exit(100);
+}
 return (0);
-int i, c, buf_size = 1024;
-void *buf = malloc(sizeof(char) * buf_size);
-
-if (buf != NULL)
-{
-for (i = 0; ; i += buf_size)
-{
-c = read(from_fd, buf, buf_size);
-if (c == 0)
-break;
-if (write(to_fd, buf, c) != c)
-{
-dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest_file);
-exit(99);
-}
-}
-free(buf);
-}
 }
