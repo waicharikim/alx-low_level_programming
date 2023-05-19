@@ -1,8 +1,11 @@
+/**
+ * main - prints a string of chars
+ *
+ * Description: prints a string of chatacters and appends a new line
+ * Return: 0 (sucess)
+ */
 #include <stdio.h>
 
-/**
-*program that prints a string of chars
-*/
 int main(void)
 {
 puts("\"Programming is like building a multilingual puzzle");
