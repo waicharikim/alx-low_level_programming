@@ -22,8 +22,6 @@ int main(void)
 			dig2 = (num1 % 10);
 			dig_1 = (num2 / 10);
 			dig_2 = (num2 % 10);
-			if (dig1 == dig_2 && dig2 == dig_1)
-				continue;
 			putchar(dig1 + 48);
 			putchar(dig2 + 48);
 			putchar(' ');
