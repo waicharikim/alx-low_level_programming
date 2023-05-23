@@ -20,6 +20,8 @@ void times_table(void)
 			result = n * p;
 			r1 = result / 10;
 			r2 = result % 10;
+			if (p != 0 && r1 == 0 && p < 10)
+				_putchar(' ');
 			if (r1 != 0)
 			{
 				_putchar(r1 + 48);
@@ -30,8 +32,6 @@ void times_table(void)
 				_putchar(',');
 				_putchar(' ');
 			}
-			if (result < 9 && p < 9)
-				_putchar(' ');
 			if (p == 9)
 				_putchar(10);
 
