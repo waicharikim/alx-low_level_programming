@@ -29,11 +29,11 @@ void print_times_table(int n)
 				r3 = (result % 100) % 10;
 				if (q != 0 && r1 == 0 && q < n + 1)
 					_putchar(' ');
-				if (q != 0 && r2 == 0 && q < n + 1)
+				if (q != 0 && r2 == 0 && r1 == 0 && q < n + 1)
 					_putchar(' ');
 				if (r1 != 0)
 					_putchar(r1 + 48);
-				if (r2 != 0)
+				if (r2 != 0 || r1)
 					_putchar(r2 + 48);
 				_putchar(r3 + 48);
 				if (q < n)
