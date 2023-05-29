@@ -7,7 +7,6 @@
  * Return: void
  */
 
-int _strlen(char *s);
 void puts2(char *str)
 {
 	int len;
@@ -29,9 +28,9 @@ void puts2(char *str)
  */
 int _strlen(char *s)
 {
-        int len;
+	int len;
 
-        for (len = 0; *s != '\0'; s++)
-                len++;
-        return (len);
+	for (len = 0; *s != '\0'; s++)
+		len++;
+	return (len);
 }
