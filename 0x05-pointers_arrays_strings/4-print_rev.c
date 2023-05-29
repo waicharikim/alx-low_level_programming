@@ -6,6 +6,7 @@
  *
  * Return: void
  */
+
 int _strlen(char *s);
 
 void print_rev(char *s)
@@ -25,13 +26,16 @@ void print_rev(char *s)
 	_putchar('\n');
 }
 /**
- * function for calculating lenth of the string
+ * _strlen - function for calculating lenth of the string
+ * @s: string to be measured length
+ *
+ * Return: length of string
  */
 int _strlen(char *s)
 {
-        int len;
+	int len;
 
-        for (len = 0; *s != '\0'; s++)
-                len++;
-        return (len);
+	for (len = 0; *s != '\0'; s++)
+		len++;
+	return (len);
 }

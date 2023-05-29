@@ -16,7 +16,7 @@ void puts_half(char *str)
 
 	len = _strlen(str);
 
-	if (len%2 == 0)
+	if (len % 2 == 0)
 	{
 		str = str + (len / 2);
 		while (*str != '\0')
@@ -25,7 +25,7 @@ void puts_half(char *str)
 			str++;
 		}
 	}
-	else if (len%2 != '\0')
+	else
 	{
 		str = str + ((len - 1) / 2);
 		while (*str != '\0')
@@ -37,13 +37,16 @@ void puts_half(char *str)
 	_putchar('\n');
 }
 /**
- * function for calculating lenth of the string
+ * _strlen - function for calculating lenth of the string
+ * @s: string to be measured length
+ *
+ * Return: legth of string
  */
 int _strlen(char *s)
 {
-        int len;
+	int len;
 
-        for (len = 0; *s != '\0'; s++)
-                len++;
-        return (len);
+	for (len = 0; *s != '\0'; s++)
+		len++;
+	return (len);
 }
