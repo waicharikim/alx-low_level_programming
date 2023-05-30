@@ -10,10 +10,28 @@
  */
 char *_strcpy(char *dest, char *src)
 {
-	while (*src)
+	int i;
+	int len;
+
+	len = _strlen(src);
+	for (i = 0; i < len; i++, src++)
 	{
-		*dest++ = *src++;
+		dest[i] = *src;
 	}
-	*dest = '\0';
+	dest [i] = '\0';
 	return (dest);
+}
+/**
+ * _strlen - compute length of a string
+ * @s: pointer to the string
+ *
+ * Return: length of the string
+ */
+int _strlen(char *s)
+{
+	int len;
+
+	for (len = 0; *s != '\0'; s++)
+		len++;
+	return (len);
 }
