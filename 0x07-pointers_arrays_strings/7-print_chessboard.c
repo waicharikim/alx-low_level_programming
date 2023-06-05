@@ -2,7 +2,7 @@
 
 /**
  * print_chessboard - print chessboard
- * a: 2-d array
+ * @a: 2-d array
  *
  * Return:void
  */
