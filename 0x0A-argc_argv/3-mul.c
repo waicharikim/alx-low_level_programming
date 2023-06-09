@@ -3,10 +3,11 @@
 
 /**
  * main - multiply 2 integers
+ *
  * @argc - no of arguments
  * @argv - pointer to arguments
  *
- * Return: result
+ * Return: 0
  */
 
 int main(int argc, char **argv)
