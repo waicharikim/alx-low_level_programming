@@ -4,8 +4,8 @@
 /**
  * main - multiply 2 integers
  *
- * @argc - no of arguments
- * @argv - pointer to arguments
+ * @argc: no of arguments
+ * @argv: pointer to arguments
  *
  * Return: 0
  */
