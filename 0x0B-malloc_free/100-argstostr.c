@@ -20,21 +20,21 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 	len = av;
 	count = 0;
-	for(i = 0; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; len[i][j]; j++, count++);
+		for (j = 0; len[i][j]; j++, count++)
+			;
 	}
-	str = malloc(sizeof(char) * count + ac);
+	str = malloc(sizeof(char) * count + ac + 1);
 	if (str != NULL)
 	{
 		for (i = 0; i < ac; i++)
 		{
 			for (j = 0, n = 0; av[i][j]; j++, n++)
-			       str[n]  = av[i][j];
+				str[n]  = av[i][j];
 			str[n] = '\n';
 		}
 		return (str);
 	}
-	else
 		return (NULL);
 }
