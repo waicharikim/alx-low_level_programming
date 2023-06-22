@@ -8,7 +8,7 @@
  * Return: index of first element if cmp does not return 0
  * if no element matches return -1 or if size <= 0
  */
-int int_index(int *array, int size, int (*cmp)(int))
+int int_index(int *array, int size, int (*cmp)(int j))
 {
 	int i;
 
@@ -18,7 +18,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 	{
 		cmp(array[i]);
 		if (cmp != 0)
-			return(i);
+			return (i);
 	}
 	return (-1);
 }
