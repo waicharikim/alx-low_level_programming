@@ -1,8 +1,9 @@
 #include "lists.h"
 
 /**
- * add_nodes - adds nodes to a list
- * @h: pointer to a node
+ * add_node - adds nodes to a list
+ * @head: location of head pointer
+ * @str: pointer to a string
  *
  * Return: pointer to added node/element. Null for fail
  */
