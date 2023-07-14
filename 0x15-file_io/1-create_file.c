@@ -1,5 +1,5 @@
 #include "main.h"
-11;rgb:0000/0000/0000/**
+/**
  * create_file - create a file
  * @filename: name of the fileto create
  * @text_content: string to write to file
